@@ -1,0 +1,11 @@
+D:\repos\OcCardPack\bin\Debug\netstandard2.0\OcCardPack.deps.json
+D:\repos\OcCardPack\bin\Debug\netstandard2.0\OcCardPack.dll
+D:\repos\OcCardPack\bin\Debug\netstandard2.0\OcCardPack.pdb
+D:\repos\OcCardPack\bin\Debug\netstandard2.0\API.dll
+D:\repos\OcCardPack\obj\Debug\netstandard2.0\OcCardPack.csprojAssemblyReference.cache
+D:\repos\OcCardPack\obj\Debug\netstandard2.0\OcCardPack.AssemblyInfoInputs.cache
+D:\repos\OcCardPack\obj\Debug\netstandard2.0\OcCardPack.AssemblyInfo.cs
+D:\repos\OcCardPack\obj\Debug\netstandard2.0\OcCardPack.csproj.CoreCompileInputs.cache
+D:\repos\OcCardPack\obj\Debug\netstandard2.0\OcCardPack.csproj.CopyComplete
+D:\repos\OcCardPack\obj\Debug\netstandard2.0\OcCardPack.dll
+D:\repos\OcCardPack\obj\Debug\netstandard2.0\OcCardPack.pdb
