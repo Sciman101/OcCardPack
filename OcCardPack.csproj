@@ -12,7 +12,6 @@
   <ItemGroup>
     <Folder Include="Artwork\Abilities\" />
     <Folder Include="Artwork\Cards\" />
-    <Folder Include="Cards\" />
   </ItemGroup>
 
   <ItemGroup>

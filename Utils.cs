@@ -11,7 +11,7 @@ namespace OcCardPack
     class Utils
     {
         // Helper to add a new ability
-        public static NewAbility AddAbility<T>(string name, string rulebookDescription, bool activated=true) where T : AbilityBehaviour
+        public static NewAbility AddAbility<T>(string name, string rulebookDescription, bool activated=false) where T : AbilityBehaviour
         {
             Type type = typeof(T);
 

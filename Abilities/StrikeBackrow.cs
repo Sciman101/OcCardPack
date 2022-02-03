@@ -33,11 +33,5 @@ namespace OcCardPack.Abilities
         }
     }
 
-    [HarmonyPatch]
-    public class PatchesForStrikeBackrow
-    {
-
-
-
-    }
+  
 }

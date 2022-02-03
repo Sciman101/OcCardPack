@@ -9,6 +9,7 @@ using System.Reflection;
 using OcCardPack.Abilities;
 using DiskCardGame;
 using System.Linq;
+using OcCardPack.Cards;
 
 namespace OcCardPack
 {
@@ -32,15 +33,17 @@ namespace OcCardPack
             #region Add Abilities
             StrikeBackrow.Create();
             DestroyTerrain.Create();
+
+            JnfrFaceRandomizer.Create();
             #endregion
 
             #region Add Cards
 
             NewCard.Add(
-                "Imp",
-                "Imp",
+                "Iekika",
+                "Iekika",
                 3, 3,
-                new List<CardMetaCategory> { CardMetaCategory.ChoiceNode, CardMetaCategory.Rare },
+                new List<CardMetaCategory> { CardMetaCategory.Rare },
                 CardComplexity.Simple,
                 CardTemple.Nature,
                 description: "An excitable hunter who will strike at anything.",
@@ -52,8 +55,8 @@ namespace OcCardPack
                 );
 
             NewCard.Add(
-                "Raccoon",
-                "Raccoon",
+                "Root",
+                "Root",
                 1, 2,
                 new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
                 CardComplexity.Simple,
@@ -66,6 +69,23 @@ namespace OcCardPack
                 abilities: new List<Ability> { DestroyTerrain.ability }
                 );
 
+            NewCard.Add(
+                "JNFR",
+                "JNFR",
+                1, 1,
+                new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
+                CardComplexity.Simple,
+                CardTemple.Nature,
+                description: "Oh no",
+                bloodCost: 1,
+                defaultTex: AllCardArt.Single(t => t.name.Equals("jnfr")),
+                emissionTex: AllCardArt.Single(t => t.name.Equals("jnfr_emission")),
+                abilities: new List<Ability> { Ability.BuffEnemy, Ability.DrawCopyOnDeath },
+                specialAbilities: new List<SpecialTriggeredAbility> { SpecialTriggeredAbility.TalkingCardChooser, JnfrFaceRandomizer.specialTriggeredAbility },
+                appearanceBehaviour: new List<CardAppearanceBehaviour.Appearance> { CardAppearanceBehaviour.Appearance.AnimatedPortrait }
+                );
+            NewTalkingCard.Add<JNFRTalkingCard>("JNFR", JNFRTalkingCard.GetDictionary());
+
             #endregion
 
         }
@@ -74,6 +94,8 @@ namespace OcCardPack
         {
             LoadTexturesFrom("Abilities",ref AllAbilityIcons);
             LoadTexturesFrom("Cards",ref AllCardArt);
+
+            JnfrFaceRandomizer.jnfrFaceSprites = AllCardArt.Where(tex => tex.name.StartsWith("jnfr") && !tex.name.Contains("emission")).ToArray();
         }
 
         private void LoadTexturesFrom(string subdir, ref Texture2D[] output)
@@ -84,6 +106,7 @@ namespace OcCardPack
             // load all images
             for (int i=0;i<allFiles.Length;i++) {
                 Texture2D tex = new Texture2D(2,2);
+                tex.filterMode = FilterMode.Point;
                 tex.name = Path.GetFileNameWithoutExtension(allFiles[i]);
                 byte[] imgBytes = File.ReadAllBytes(allFiles[i]);
                 tex.LoadImage(imgBytes);
