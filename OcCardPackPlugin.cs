@@ -41,7 +41,7 @@ namespace OcCardPack
 
             NewCard.Add(
                 "Iekika",
-                "Iekika",
+                "Imp",
                 3, 3,
                 new List<CardMetaCategory> { CardMetaCategory.Rare },
                 CardComplexity.Simple,
@@ -56,7 +56,7 @@ namespace OcCardPack
 
             NewCard.Add(
                 "Root",
-                "Root",
+                "Raccoon",
                 1, 2,
                 new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
                 CardComplexity.Simple,
@@ -71,7 +71,7 @@ namespace OcCardPack
 
             NewCard.Add(
                 "JNFR",
-                "JNFR",
+                "Annoying Bot",
                 1, 1,
                 new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
                 CardComplexity.Simple,
@@ -93,9 +93,7 @@ namespace OcCardPack
         private void LoadAssets()
         {
             LoadTexturesFrom("Abilities",ref AllAbilityIcons);
-            LoadTexturesFrom("Cards",ref AllCardArt);
-
-            JnfrFaceRandomizer.jnfrFaceSprites = AllCardArt.Where(tex => tex.name.StartsWith("jnfr") && !tex.name.Contains("emission")).ToArray();
+            LoadTexturesFrom("Cards", ref AllCardArt);
         }
 
         private void LoadTexturesFrom(string subdir, ref Texture2D[] output)

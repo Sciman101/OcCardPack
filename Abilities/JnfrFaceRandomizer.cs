@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace OcCardPack.Abilities
         public static SpecialTriggeredAbility specialTriggeredAbility;
 
         // Get all applicable jnfr face sprites
-        public static Texture2D[] jnfrFaceSprites = new Texture2D[0];
+        public static Sprite[] jnfrFaceSprites;
 
         public override bool RespondsToDrawn()
         {
@@ -22,7 +23,7 @@ namespace OcCardPack.Abilities
             // Randomize portrait
             int index = Random.Range(0, jnfrFaceSprites.Length);
 
-            Card.renderInfo.portraitOverride = Sprite.Create(jnfrFaceSprites[index],CardUtils.DefaultCardArtRect,CardUtils.DefaultVector2);
+            Card.renderInfo.portraitOverride = jnfrFaceSprites[index];
             Card.RenderCard();
 
             yield break;
@@ -33,6 +34,11 @@ namespace OcCardPack.Abilities
             StatIconInfo info = ScriptableObject.CreateInstance<StatIconInfo>();
             NewSpecialAbility ability = new NewSpecialAbility(typeof(JnfrFaceRandomizer),SpecialAbilityIdentifier.GetID(OcCardPackPlugin.PluginGuid,"JnfrFaceRandomizer"),info);
             JnfrFaceRandomizer.specialTriggeredAbility = ability.specialTriggeredAbility;
+
+            // Load textures and convert to sprites
+            jnfrFaceSprites = OcCardPackPlugin.AllCardArt.Where(tex => tex.name.StartsWith("jnfr") && !tex.name.Contains("emission")).
+                Select(tex => Sprite.Create(tex,CardUtils.DefaultCardArtRect,CardUtils.DefaultVector2)).
+                ToArray();
         }
 
     }
