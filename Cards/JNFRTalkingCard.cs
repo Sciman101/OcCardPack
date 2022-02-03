@@ -37,7 +37,7 @@ namespace OcCardPack.Cards
             Dictionary<string, DialogueEvent> events = new Dictionary<string, DialogueEvent>();
 
             AddSimpleDialougeEvent(events,"JnfrDrawn","It's me!");
-            //AddSimpleDialougeEvent(events,"JnfrDrawn2","I'm back!");
+            AddSimpleDialougeEvent(events,"JnfrDrawn2","Gamer time");
             AddSimpleDialougeEvent(events,"JnfrPlayed","This is the run");
             AddSimpleDialougeEvent(events,"JnfrAttacked","$!@*");
             AddSimpleDialougeEvent(events,"JnfrPositiveSelectable","JNFR time, baby");
@@ -45,18 +45,18 @@ namespace OcCardPack.Cards
             AddSimpleDialougeEvent(events,"JnfrSacrificed","Dies Anyways...");
             //AddSimpleDialougeEvent(events,"JnfrCardMerge","Pog");
             AddSimpleDialougeEvent(events,"JnfrDeckTrial","Easy win");
-            AddSimpleDialougeEvent(events,"JnfrDiscovered","Guess who ;)");
+            //AddSimpleDialougeEvent(events,"JnfrDiscovered","Guess who ;)");
 
-            events.Add("JnfrDrawn2", new DialogueEvent()
+            events.Add("JnfrDiscovered", new DialogueEvent()
             {
-                id = "JnfrDrawn2",
+                id = "JnfrDiscovered",
                 speakers = new List<DialogueEvent.Speaker>() { Speaker, DialogueEvent.Speaker.Leshy },
                 mainLines = new DialogueEvent.LineSet()
                 {
                     lines = new List<DialogueEvent.Line>()
                     {
-                        new DialogueEvent.Line { text = "I'm back!" },
-                        new DialogueEvent.Line { text = "Oh no", speakerIndex = 1}
+                        new DialogueEvent.Line { text = "Guess who!" },
+                        new DialogueEvent.Line { text = "Oh no, not you...", speakerIndex = 1}
                     }
                 }
             });

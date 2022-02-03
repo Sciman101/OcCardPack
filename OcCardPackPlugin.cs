@@ -34,6 +34,13 @@ namespace OcCardPack
             StrikeBackrow.Create();
             DestroyTerrain.Create();
 
+            PotionSeller.Create();
+            PotionHealth.Create();
+            PotionPower.Create();
+            PotionFlight.Create();
+            PotionGrowth.Create();
+            PotionBlood.Create();
+
             JnfrFaceRandomizer.Create();
             #endregion
 
@@ -46,7 +53,7 @@ namespace OcCardPack
                 new List<CardMetaCategory> { CardMetaCategory.Rare },
                 CardComplexity.Simple,
                 CardTemple.Nature,
-                description: "An excitable hunter who will strike at anything.",
+                description: "The otherworldy Imp. Easy to excite, it shall strike at anything.",
                 bloodCost: 3,
                 appearanceBehaviour: new List<CardAppearanceBehaviour.Appearance> { CardAppearanceBehaviour.Appearance.RareCardBackground },
                 defaultTex: AllCardArt.Single(t => t.name.Equals("imp")),
@@ -56,14 +63,14 @@ namespace OcCardPack
 
             NewCard.Add(
                 "Root",
-                "Raccoon",
+                "Kobold",
                 1, 2,
                 new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
                 CardComplexity.Simple,
                 CardTemple.Nature,
-                description: "No wall or monument shall hinder this beast.",
+                description: "A strange creature. No wall or monument shall hinder this beast.",
                 tribes: new List<Tribe> { Tribe.Reptile }, // maybe not lmao
-                bloodCost: 1,
+                bonesCost: 3,
                 defaultTex: AllCardArt.Single(t => t.name.Equals("root")),
                 emissionTex: AllCardArt.Single(t => t.name.Equals("root_emission")),
                 abilities: new List<Ability> { DestroyTerrain.ability }
@@ -71,12 +78,12 @@ namespace OcCardPack
 
             NewCard.Add(
                 "JNFR",
-                "Annoying Bot",
+                "JNFR",
                 1, 1,
                 new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
                 CardComplexity.Simple,
                 CardTemple.Nature,
-                description: "Oh no",
+                description: "It bears a strong resemblance to... him, only.... more insufferable.",
                 bloodCost: 1,
                 defaultTex: AllCardArt.Single(t => t.name.Equals("jnfr")),
                 emissionTex: AllCardArt.Single(t => t.name.Equals("jnfr_emission")),
@@ -86,6 +93,24 @@ namespace OcCardPack
                 );
             NewTalkingCard.Add<JNFRTalkingCard>("JNFR", JNFRTalkingCard.GetDictionary());
 
+            NewCard.Add(
+                "Jamie",
+                "Kobold",
+                1, 2,
+                new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
+                CardComplexity.Simple,
+                CardTemple.Nature,
+                description: "A strange creature. It offers its wares to you, excitedly.",
+                bloodCost: 2,
+                defaultTex: AllCardArt.Single(t => t.name.Equals("jamie")),
+                emissionTex: AllCardArt.Single(t => t.name.Equals("jamie_emission")),
+                abilities: new List<Ability> { PotionSeller.ability }
+                );
+            AddPotionCard("Health Tonic",PotionHealth.ability);
+            AddPotionCard("Power Tonic",PotionPower.ability);
+            AddPotionCard("Flight Tonic",PotionFlight.ability);
+            AddPotionCard("Growth Tonic",PotionGrowth.ability);
+            AddPotionCard("Enriched Blood Vial",PotionBlood.ability);
             #endregion
 
         }
@@ -94,6 +119,20 @@ namespace OcCardPack
         {
             LoadTexturesFrom("Abilities",ref AllAbilityIcons);
             LoadTexturesFrom("Cards", ref AllCardArt);
+        }
+
+        private void AddPotionCard(string name, Ability potionAbility)
+        {
+            CardInfo info = ScriptableObject.CreateInstance<CardInfo>();
+            info.name = potionAbility.GetType().Name;
+            info.displayedName = name;
+            info.baseHealth = 1;
+            info.baseAttack = 0;
+            info.cardComplexity = CardComplexity.Simple;
+            info.temple = CardTemple.Nature;
+            info.abilities = new List<Ability> { potionAbility };
+            NewCard.Add(info);
+            PotionSeller.potionCardPool.Add(info);
         }
 
         private void LoadTexturesFrom(string subdir, ref Texture2D[] output)

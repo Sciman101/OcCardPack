@@ -15,7 +15,7 @@
           "NETStandard.Library": "2.0.3",
           "System.Resources.Extensions": "6.0.0",
           "UnityEngine.Modules": "2019.4.24",
-          "API": "1.13.0.0"
+          "API": "1.13.1.0"
         },
         "runtime": {
           "OcCardPack.dll": {}
@@ -458,11 +458,11 @@
         }
       },
       "UnityEngine.Modules/2019.4.24": {},
-      "API/1.13.0.0": {
+      "API/1.13.1.0": {
         "runtime": {
           "API.dll": {
-            "assemblyVersion": "1.13.0.0",
-            "fileVersion": "1.13.0.0"
+            "assemblyVersion": "1.13.1.0",
+            "fileVersion": "1.13.1.0"
           }
         }
       }
@@ -782,7 +782,7 @@
       "path": "unityengine.modules/2019.4.24",
       "hashPath": "unityengine.modules.2019.4.24.nupkg.sha512"
     },
-    "API/1.13.0.0": {
+    "API/1.13.1.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
