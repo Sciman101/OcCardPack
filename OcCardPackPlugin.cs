@@ -35,11 +35,9 @@ namespace OcCardPack
             DestroyTerrain.Create();
 
             PotionSeller.Create();
-            PotionHealth.Create();
-            PotionPower.Create();
-            PotionFlight.Create();
-            PotionGrowth.Create();
-            PotionBlood.Create();
+            TonicEffect.Create();
+
+            Sticky.Create();
 
             JnfrFaceRandomizer.Create();
             #endregion
@@ -97,20 +95,35 @@ namespace OcCardPack
                 "Jamie",
                 "Kobold",
                 1, 2,
-                new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
+                new List<CardMetaCategory> { CardMetaCategory.Rare },
                 CardComplexity.Simple,
                 CardTemple.Nature,
                 description: "A strange creature. It offers its wares to you, excitedly.",
+                tribes: new List<Tribe> { Tribe.Reptile }, // maybe not lmao
                 bloodCost: 2,
                 defaultTex: AllCardArt.Single(t => t.name.Equals("jamie")),
                 emissionTex: AllCardArt.Single(t => t.name.Equals("jamie_emission")),
                 abilities: new List<Ability> { PotionSeller.ability }
                 );
-            AddPotionCard("Health Tonic",PotionHealth.ability);
-            AddPotionCard("Power Tonic",PotionPower.ability);
-            AddPotionCard("Flight Tonic",PotionFlight.ability);
-            AddPotionCard("Growth Tonic",PotionGrowth.ability);
-            AddPotionCard("Enriched Blood Vial",PotionBlood.ability);
+            AddPotionCard(TonicEffect.POT_HEALTH,"Health Tonic");
+            AddPotionCard(TonicEffect.POT_POWER, "Power Tonic");
+            AddPotionCard(TonicEffect.POT_FLIGHT, "Flight Tonic");
+            AddPotionCard(TonicEffect.POT_GROWTH, "Growth Tonic");
+            AddPotionCard(TonicEffect.POT_BLOOD, "Enriched Blood Vial");
+
+            NewCard.Add(
+                "Uma",
+                "Slime",
+                0, 8,
+                new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
+                CardComplexity.Simple,
+                CardTemple.Nature,
+                description: "The vast slime. It will hold your enemies close.",
+                bloodCost: 3,
+                defaultTex: AllCardArt.Single(t => t.name.Equals("uma")),
+                emissionTex: AllCardArt.Single(t => t.name.Equals("uma_emission")),
+                abilities: new List<Ability> { Sticky.ability }
+                );
             #endregion
 
         }
@@ -121,16 +134,17 @@ namespace OcCardPack
             LoadTexturesFrom("Cards", ref AllCardArt);
         }
 
-        private void AddPotionCard(string name, Ability potionAbility)
+        private void AddPotionCard(string id, string name)
         {
             CardInfo info = ScriptableObject.CreateInstance<CardInfo>();
-            info.name = potionAbility.GetType().Name;
+            info.name = id;
             info.displayedName = name;
             info.baseHealth = 1;
             info.baseAttack = 0;
             info.cardComplexity = CardComplexity.Simple;
             info.temple = CardTemple.Nature;
-            info.abilities = new List<Ability> { potionAbility };
+            info.abilities = new List<Ability> { TonicEffect.ability };
+            info.portraitTex = Sprite.Create(AllCardArt.Single(t => t.name.Equals(id,System.StringComparison.OrdinalIgnoreCase)),CardUtils.DefaultCardArtRect,CardUtils.DefaultVector2);
             NewCard.Add(info);
             PotionSeller.potionCardPool.Add(info);
         }
