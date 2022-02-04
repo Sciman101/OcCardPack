@@ -32,12 +32,16 @@ namespace OcCardPack
 
             #region Add Abilities
             StrikeBackrow.Create();
+
             DestroyTerrain.Create();
 
             PotionSeller.Create();
             TonicEffect.Create();
 
             Sticky.Create();
+
+            VinesOnAttack.Create();
+            DarueAttackTrigger.Create();
 
             JnfrFaceRandomizer.Create();
             #endregion
@@ -124,6 +128,34 @@ namespace OcCardPack
                 emissionTex: AllCardArt.Single(t => t.name.Equals("uma_emission")),
                 abilities: new List<Ability> { Sticky.ability }
                 );
+
+            NewCard.Add(
+                "Darue",
+                "Plantfolk",
+                0, 3,
+                new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
+                CardComplexity.Simple,
+                CardTemple.Nature,
+                description: "The timid wallflower. ",
+                bonesCost: 4,
+                specialAbilities: new List<SpecialTriggeredAbility> { DarueAttackTrigger.specialTriggeredAbility },
+                defaultTex: AllCardArt.Single(t => t.name.Equals("darue_inactive")),
+                altTex: AllCardArt.Single(t => t.name.Equals("darue")),
+                abilities: new List<Ability> { VinesOnAttack.ability }
+                );
+
+            NewCard.Add(
+               "Thorn_Vines",
+               "Thorned Vines",
+               1, 1,
+               new List<CardMetaCategory> { },
+               CardComplexity.Simple,
+               CardTemple.Nature,
+               traits: new List<Trait> { Trait.Terrain },
+               appearanceBehaviour: new List<CardAppearanceBehaviour.Appearance> { CardAppearanceBehaviour.Appearance.TerrainBackground, },
+               defaultTex: AllCardArt.Single(t => t.name.Equals("darue_vines")),
+               abilities: new List<Ability> { Ability.Sharp }
+               );
             #endregion
 
         }

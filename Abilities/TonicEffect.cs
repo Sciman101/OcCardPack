@@ -1,6 +1,7 @@
 ﻿using APIPlugin;
 using DiskCardGame;
 using System.Collections;
+using UnityEngine;
 
 namespace OcCardPack.Abilities
 {
@@ -53,7 +54,13 @@ namespace OcCardPack.Abilities
             }
 
             // Give a bonus to the card we were sacrificed for
-            BoardManager.Instance.currentSacrificeDemandingCard.AddTemporaryMod(cardMod);
+            PlayableCard target = BoardManager.Instance.currentSacrificeDemandingCard;
+            yield return new WaitForSeconds(0.15f);
+            target.Anim.PlayTransformAnimation();
+            yield return new WaitForSeconds(0.15f);
+            target.AddTemporaryMod(cardMod);
+
+
             yield break;
         }
 
