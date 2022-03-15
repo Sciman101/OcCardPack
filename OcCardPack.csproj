@@ -29,6 +29,9 @@
     <Reference Include="API">
       <HintPath>C:\Users\Scima\AppData\Roaming\r2modmanPlus-local\Inscryption\profiles\Default\BepInEx\plugins\API_dev-API\API.dll</HintPath>
     </Reference>
+    <Reference Include="voidSigils">
+      <HintPath>C:\Users\Scima\AppData\Roaming\r2modmanPlus-local\Inscryption\profiles\Default\BepInEx\plugins\AllTheSigils-All_The_Sigils\voidSigils.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

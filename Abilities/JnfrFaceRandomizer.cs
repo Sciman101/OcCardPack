@@ -23,8 +23,8 @@ namespace OcCardPack.Abilities
             // Randomize portrait
             int index = Random.Range(0, jnfrFaceSprites.Length);
 
-            Card.renderInfo.portraitOverride = jnfrFaceSprites[index];
-            Card.RenderCard();
+            this.PlayableCard.renderInfo.portraitOverride = jnfrFaceSprites[index];
+            PlayableCard.RenderCard();
 
             yield break;
         }

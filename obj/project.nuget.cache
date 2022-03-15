@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9ZfnDIcor7wvfX9HjicrU/CJWGjUMxDfx4hD1ZCjbDjEX+ku/9SpfwTHr67NBQ9u7Oe+ORwalHzfH8DhcFFq3A==",
+  "dgSpecHash": "Z6TjAGz+6aHsjN/DktutimWzT1bqdpQa2WGkcbhYOyA+KnKeXKtueGYd9DnMgHd1p4wuclquJO/s5LX7zUXgjw==",
   "success": true,
-  "projectFilePath": "D:\\repos\\OcCardPack\\OcCardPack.csproj",
+  "projectFilePath": "D:\\repos\\mods\\OcCardPack\\OcCardPack.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Scima\\.nuget\\packages\\bepinex.analyzers\\1.0.7\\bepinex.analyzers.1.0.7.nupkg.sha512",
     "C:\\Users\\Scima\\.nuget\\packages\\bepinex.baselib\\5.4.16\\bepinex.baselib.5.4.16.nupkg.sha512",

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\repos\\OcCardPack\\OcCardPack.csproj": {}
+    "D:\\repos\\mods\\OcCardPack\\OcCardPack.csproj": {}
   },
   "projects": {
-    "D:\\repos\\OcCardPack\\OcCardPack.csproj": {
+    "D:\\repos\\mods\\OcCardPack\\OcCardPack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\repos\\OcCardPack\\OcCardPack.csproj",
+        "projectUniqueName": "D:\\repos\\mods\\OcCardPack\\OcCardPack.csproj",
         "projectName": "OcCardPack",
-        "projectPath": "D:\\repos\\OcCardPack\\OcCardPack.csproj",
+        "projectPath": "D:\\repos\\mods\\OcCardPack\\OcCardPack.csproj",
         "packagesPath": "C:\\Users\\Scima\\.nuget\\packages\\",
-        "outputPath": "D:\\repos\\OcCardPack\\obj\\",
+        "outputPath": "D:\\repos\\mods\\OcCardPack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "D:\\repos\\OcCardPack\\NuGet.Config",
+          "D:\\repos\\mods\\OcCardPack\\NuGet.Config",
           "C:\\Users\\Scima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

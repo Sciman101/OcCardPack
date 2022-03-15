@@ -9,12 +9,13 @@ using System.Reflection;
 using OcCardPack.Abilities;
 using DiskCardGame;
 using System.Linq;
-using OcCardPack.Cards;
+using voidSigils;
 
 namespace OcCardPack
 {
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     [BepInDependency("cyantist.inscryption.api", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("extraVoid.inscryption.voidSigils", BepInDependency.DependencyFlags.HardDependency)]
     class OcCardPackPlugin : BaseUnityPlugin
     {
         public const string PluginGuid = "sciman.inscryption.ocpack";
@@ -31,7 +32,7 @@ namespace OcCardPack
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PluginGuid);
 
             #region Add Abilities
-            StrikeBackrow.Create();
+            //AttackCardAndLeshy.Create();
 
             DestroyTerrain.Create();
 
@@ -52,7 +53,7 @@ namespace OcCardPack
                 "Iekika",
                 "Imp",
                 3, 3,
-                new List<CardMetaCategory> { CardMetaCategory.Rare },
+                new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
                 CardComplexity.Simple,
                 CardTemple.Nature,
                 description: "The otherworldy Imp. Easy to excite, it shall strike at anything.",
@@ -60,7 +61,7 @@ namespace OcCardPack
                 appearanceBehaviour: new List<CardAppearanceBehaviour.Appearance> { CardAppearanceBehaviour.Appearance.RareCardBackground },
                 defaultTex: AllCardArt.Single(t => t.name.Equals("imp")),
                 emissionTex: AllCardArt.Single(t => t.name.Equals("imp_emission")),
-                abilities: new List<Ability> { StrikeBackrow.ability }
+                abilities: new List<Ability> { void_pierce.ability }
                 );
 
             NewCard.Add(
@@ -70,7 +71,7 @@ namespace OcCardPack
                 new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
                 CardComplexity.Simple,
                 CardTemple.Nature,
-                description: "A strange creature. No wall or monument shall hinder this beast.",
+                description: "A mischevious creature. No wall or monument shall hinder this beast.",
                 tribes: new List<Tribe> { Tribe.Reptile }, // maybe not lmao
                 bonesCost: 3,
                 defaultTex: AllCardArt.Single(t => t.name.Equals("root")),
@@ -80,29 +81,27 @@ namespace OcCardPack
 
             NewCard.Add(
                 "JNFR",
-                "JNFR",
+                "Robot?",
                 1, 1,
                 new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
                 CardComplexity.Simple,
                 CardTemple.Nature,
                 description: "It bears a strong resemblance to... him, only.... more insufferable.",
                 bloodCost: 1,
-                defaultTex: AllCardArt.Single(t => t.name.Equals("jnfr")),
+                defaultTex: AllCardArt.Single(t => t.name.Equals("static_jnfr")),
                 emissionTex: AllCardArt.Single(t => t.name.Equals("jnfr_emission")),
                 abilities: new List<Ability> { Ability.BuffEnemy, Ability.DrawCopyOnDeath },
-                specialAbilities: new List<SpecialTriggeredAbility> { SpecialTriggeredAbility.TalkingCardChooser, JnfrFaceRandomizer.specialTriggeredAbility },
-                appearanceBehaviour: new List<CardAppearanceBehaviour.Appearance> { CardAppearanceBehaviour.Appearance.AnimatedPortrait }
+                specialAbilities: new List<SpecialTriggeredAbility> { JnfrFaceRandomizer.specialTriggeredAbility}
                 );
-            NewTalkingCard.Add<JNFRTalkingCard>("JNFR", JNFRTalkingCard.GetDictionary());
 
             NewCard.Add(
                 "Jamie",
-                "Kobold",
+                "Alchemist",
                 1, 2,
                 new List<CardMetaCategory> { CardMetaCategory.Rare },
                 CardComplexity.Simple,
                 CardTemple.Nature,
-                description: "A strange creature. It offers its wares to you, excitedly.",
+                description: "Smelling of sulfur and ashes, it offers its wares to you, excitedly.",
                 tribes: new List<Tribe> { Tribe.Reptile }, // maybe not lmao
                 bloodCost: 2,
                 defaultTex: AllCardArt.Single(t => t.name.Equals("jamie")),
@@ -118,7 +117,7 @@ namespace OcCardPack
             NewCard.Add(
                 "Uma",
                 "Slime",
-                0, 8,
+                1, 8,
                 new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
                 CardComplexity.Simple,
                 CardTemple.Nature,
@@ -136,7 +135,7 @@ namespace OcCardPack
                 new List<CardMetaCategory> { CardMetaCategory.ChoiceNode },
                 CardComplexity.Simple,
                 CardTemple.Nature,
-                description: "The timid wallflower. ",
+                description: "A wallflower, but a loyal one.",
                 bonesCost: 4,
                 specialAbilities: new List<SpecialTriggeredAbility> { DarueAttackTrigger.specialTriggeredAbility },
                 defaultTex: AllCardArt.Single(t => t.name.Equals("darue_inactive")),
