@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace OcCardPack.Abilities
 {
-    class TonicEffect : AbilityBehaviour
+    class TonicEffectBehaviour : AbilityBehaviour
     {
         public const string POT_HEALTH = "PotionHealth";
         public const string POT_POWER = "PotionPower";
@@ -63,10 +63,5 @@ namespace OcCardPack.Abilities
 
             yield break;
         }
-
-        public static NewAbility Create()
-		{
-			return Utils.AddAbility<TonicEffect>("Tonic", "When this card is sacrificed, the card it was sacrificed for gains a bonus depending on the type of potion sacrificed.");
-		}
 	}
 }

@@ -18,7 +18,6 @@ D:\repos\mods\OcCardPack\obj\Debug\netstandard2.0\OcCardPack.pdb
 D:\repos\mods\OcCardPack\bin\Debug\netstandard2.0\OcCardPack.deps.json
 D:\repos\mods\OcCardPack\bin\Debug\netstandard2.0\OcCardPack.dll
 D:\repos\mods\OcCardPack\bin\Debug\netstandard2.0\OcCardPack.pdb
-D:\repos\mods\OcCardPack\bin\Debug\netstandard2.0\API.dll
 D:\repos\mods\OcCardPack\obj\Debug\netstandard2.0\OcCardPack.csproj.CopyComplete
 D:\repos\mods\OcCardPack\bin\Debug\netstandard2.0\voidSigils.dll
-D:\repos\mods\OcCardPack\bin\Debug\netstandard2.0\Custom_Sigils.dll
+D:\repos\mods\OcCardPack\bin\Debug\netstandard2.0\InscryptionAPI.dll

@@ -1,4 +1,4 @@
-﻿using APIPlugin;
+﻿using InscryptionAPI;
 using DiskCardGame;
 using System;
 using System.Collections;
@@ -9,9 +9,8 @@ using UnityEngine;
 
 namespace OcCardPack.Abilities
 {
-    class DarueAttackTrigger : SpecialCardBehaviour
+    class DarueAttackTriggerBehaviour : SpecialCardBehaviour
     {
-        public static SpecialTriggeredAbility specialTriggeredAbility;
 
         private bool hasBeenDamaged = false;
 
@@ -35,13 +34,6 @@ namespace OcCardPack.Abilities
             }
 
             yield break;
-        }
-
-        public static void Create()
-        {
-            StatIconInfo info = ScriptableObject.CreateInstance<StatIconInfo>();
-            NewSpecialAbility ability = new NewSpecialAbility(typeof(DarueAttackTrigger), SpecialAbilityIdentifier.GetID(OcCardPackPlugin.PluginGuid, "DarueAttackTrigger"), info);
-            DarueAttackTrigger.specialTriggeredAbility = ability.specialTriggeredAbility;
         }
     }
 }

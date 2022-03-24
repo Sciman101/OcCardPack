@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace OcCardPack.Abilities
 {
-	public class VinesOnAttack : CreateCardsAdjacent
+	public class VinesOnAttackBehaviour : CreateCardsAdjacent
 	{
 		public static Ability ability;
 		public override Ability Ability => ability;
@@ -67,11 +67,6 @@ namespace OcCardPack.Abilities
 				yield return Singleton<TextDisplayer>.Instance.ShowUntilInput(this.CannotSpawnDialogue, -0.65f, 0.4f, Emotion.Neutral, TextDisplayer.LetterAnimation.Jitter, DialogueEvent.Speaker.Single, null, true);
 			}
 			yield break;
-		}
-
-        public static NewAbility Create()
-		{
-			return Utils.AddAbility<VinesOnAttack>("Vine Grower", "When a card bearing this sigil is played, Thorny Vines are created on each empty adjacent space. Thorny Vines are defined as: 1 Power, 1 Health, Thorns");
 		}
 	}
 }

@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace OcCardPack.Abilities
 {
-	public class PotionSeller : AbilityBehaviour
+	public class PotionSellerBehaviour : AbilityBehaviour
 	{
 		public static List<CardInfo> potionCardPool = new List<CardInfo>();
 
@@ -47,11 +47,6 @@ namespace OcCardPack.Abilities
 			// make sure user input is unlocked
 			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 			yield break;
-		}
-
-        public static NewAbility Create()
-		{
-			return Utils.AddAbility<PotionSeller>("Potion Seller", "When this card is played, choose a random tonic to enter your hand.");
 		}
 	}
 }

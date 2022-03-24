@@ -6,16 +6,10 @@ using UnityEngine;
 
 namespace OcCardPack.Abilities
 {
-	public class Sticky : AbilityBehaviour
+	public class StickyBehaviour : AbilityBehaviour
 	{
 		public static Ability ability;
 		public override Ability Ability => ability;
-
-
-		public static NewAbility Create()
-		{
-			return Utils.AddAbility<Sticky>("Sticky", "Cards opposing this creature are unable to move to other spaces on the board.");
-		}
 	}
 
 	[HarmonyPatch(typeof(Strafe),nameof(Strafe.DoStrafe))]
@@ -26,7 +20,7 @@ namespace OcCardPack.Abilities
         {
 			PlayableCard thisCard = __instance.Card;
 			PlayableCard opposingCard = thisCard.Slot.opposingSlot.Card;
-			if (opposingCard != null && opposingCard.HasAbility(Sticky.ability))
+			if (opposingCard != null && opposingCard.HasAbility(StickyBehaviour.ability))
             {
 				thisCard.Anim.StrongNegationEffect();
 				yield return new WaitForSeconds(0.15f);
@@ -46,7 +40,7 @@ namespace OcCardPack.Abilities
 		{
 			PlayableCard thisCard = __instance.Card;
 			PlayableCard opposingCard = thisCard.Slot.opposingSlot.Card;
-			if (opposingCard != null && opposingCard.HasAbility(Sticky.ability))
+			if (opposingCard != null && opposingCard.HasAbility(StickyBehaviour.ability))
 			{
 				thisCard.Anim.StrongNegationEffect();
 				yield return new WaitForSeconds(0.15f);

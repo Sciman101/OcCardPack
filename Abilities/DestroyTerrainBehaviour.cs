@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace OcCardPack.Abilities
 {
-	public class DestroyTerrain : AbilityBehaviour
+	public class DestroyTerrainBehaviour : AbilityBehaviour
 	{
 		public static Ability ability;
 		public override Ability Ability => ability;
@@ -25,11 +25,6 @@ namespace OcCardPack.Abilities
 			yield return target.Die(false, base.Card, true);
 			yield return base.LearnAbility(0f);
 			yield break;
-		}
-
-		public static NewAbility Create()
-		{
-			return Utils.AddAbility<DestroyTerrain>("Vandal", "When this card attacks a terrain card, it is destroyed immediately.");
 		}
 	}
 }

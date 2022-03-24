@@ -15,7 +15,7 @@
           "NETStandard.Library": "2.0.3",
           "System.Resources.Extensions": "6.0.0",
           "UnityEngine.Modules": "2019.4.24",
-          "API": "1.13.3.0",
+          "InscryptionAPI": "1.0.0.0",
           "voidSigils": "1.0.0.0"
         },
         "runtime": {
@@ -459,25 +459,17 @@
         }
       },
       "UnityEngine.Modules/2019.4.24": {},
-      "API/1.13.3.0": {
+      "InscryptionAPI/1.0.0.0": {
         "runtime": {
-          "API.dll": {
-            "assemblyVersion": "1.13.3.0",
-            "fileVersion": "1.13.3.0"
+          "InscryptionAPI.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
       "voidSigils/1.0.0.0": {
         "runtime": {
           "voidSigils.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Custom_Sigils/1.0.0.0": {
-        "runtime": {
-          "Custom_Sigils.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -799,17 +791,12 @@
       "path": "unityengine.modules/2019.4.24",
       "hashPath": "unityengine.modules.2019.4.24.nupkg.sha512"
     },
-    "API/1.13.3.0": {
+    "InscryptionAPI/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "voidSigils/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Custom_Sigils/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
