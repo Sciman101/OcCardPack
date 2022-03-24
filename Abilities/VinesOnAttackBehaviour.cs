@@ -11,7 +11,7 @@ namespace OcCardPack.Abilities
 		public static Ability ability;
 		public override Ability Ability => ability;
 
-        public override string SpawnedCardId => "Thorn_Vines";
+        public override string SpawnedCardId => OcCardPackPlugin.PluginPrefix+"_Thorn_Vines";
 
         public override string CannotSpawnDialogue => "No room for your plant to grow. Shame.";
 

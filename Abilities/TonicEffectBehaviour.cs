@@ -26,7 +26,7 @@ namespace OcCardPack.Abilities
             CardModificationInfo cardMod;
 
             print(Card.Info.name);
-            switch (Card.Info.name)
+            switch (OcCardPackPlugin.PluginPrefix+"_"+Card.Info.name)
             {
                 case POT_HEALTH:
                     cardMod = new CardModificationInfo(0, 2);

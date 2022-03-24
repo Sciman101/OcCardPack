@@ -33,10 +33,11 @@ namespace OcCardPack.Abilities
         public static void GetSprites()
         {
             // Load textures and convert to sprites
-            jnfrFaceSprites = new Sprite[11];
-            for (int i=0;i<11;i++)
+            jnfrFaceSprites = new Sprite[12];
+            for (int i=0;i<jnfrFaceSprites.Length; i++)
             {
-                jnfrFaceSprites[i] = TextureHelper.GetImageAsSprite("/Artwork/Cards/jnfr" + (i == 0 ? "":i.ToString()) + ".png",TextureHelper.SpriteType.CardPortrait);
+                string name = "Sciman101-OcCardPack/Artwork/Cards/jnfr" + (i + 1).ToString() + ".png";
+                jnfrFaceSprites[i] = TextureHelper.GetImageAsSprite(name,TextureHelper.SpriteType.CardPortrait);
             }
         }
 

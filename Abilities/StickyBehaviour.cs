@@ -20,7 +20,7 @@ namespace OcCardPack.Abilities
         {
 			PlayableCard thisCard = __instance.Card;
 			PlayableCard opposingCard = thisCard.Slot.opposingSlot.Card;
-			if (opposingCard != null && opposingCard.HasAbility(StickyBehaviour.ability))
+			if (opposingCard != null && opposingCard.HasAbility(OcCardPackPlugin.Sticky.ability))
             {
 				thisCard.Anim.StrongNegationEffect();
 				yield return new WaitForSeconds(0.15f);
@@ -40,7 +40,7 @@ namespace OcCardPack.Abilities
 		{
 			PlayableCard thisCard = __instance.Card;
 			PlayableCard opposingCard = thisCard.Slot.opposingSlot.Card;
-			if (opposingCard != null && opposingCard.HasAbility(StickyBehaviour.ability))
+			if (opposingCard != null && opposingCard.HasAbility(OcCardPackPlugin.Sticky.ability))
 			{
 				thisCard.Anim.StrongNegationEffect();
 				yield return new WaitForSeconds(0.15f);

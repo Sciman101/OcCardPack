@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Artwork\Cards\" />
+    <Folder Include="Sciman101-OcCardPack/Artwork\Cards\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,7 +38,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /Y &quot;$(ProjectDir)$(OutDir)$(TargetFileName)&quot; &quot;C:\Users\Scima\AppData\Roaming\r2modmanPlus-local\Inscryption\profiles\Default\BepInEx\plugins\OcCardPack&quot;&#xD;&#xA;xcopy /Y &quot;$(ProjectDir)Artwork&quot; &quot;C:\Users\Scima\AppData\Roaming\r2modmanPlus-local\Inscryption\profiles\Default\BepInEx\plugins\OcCardPack\Artwork&quot; /E/H/C/I" />
+    <Exec Command="xcopy /Y &quot;$(ProjectDir)$(OutDir)$(TargetFileName)&quot; &quot;C:\Users\Scima\AppData\Roaming\r2modmanPlus-local\Inscryption\profiles\Default\BepInEx\plugins\Sciman101-OcCardPack&quot;&#xD;&#xA;xcopy /Y &quot;$(ProjectDir)/Artwork&quot; &quot;C:\Users\Scima\AppData\Roaming\r2modmanPlus-local\Inscryption\profiles\Default\BepInEx\plugins\Sciman101-OcCardPack/Artwork&quot; /E/H/C/I" />
   </Target>
 
 </Project>
