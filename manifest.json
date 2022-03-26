@@ -1,0 +1,11 @@
+{
+    "name": "Sciman's OC Card Pack",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/Sciman101/OcCardPack",
+    "description": "A collection of new Act 1 cards based on various OCs",
+    "dependencies": [
+        "BepInEx-BepInExPack_Inscryption-5.4.1901",
+		"API_dev-API-2.1.0",
+		"AllTheSigils-All_The_Sigils-2.4.0"
+    ]
+}

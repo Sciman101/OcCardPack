@@ -39,11 +39,11 @@ namespace OcCardPack
 
             #region Add Abilities
 
-            VinesOnAttack = AbilityManager.New(PluginGuid, "Vine Grower", "When a card bearing this sigil is played, Thorny Vines are created on each empty adjacent space. Thorny Vines are defined as: 1 Power, 1 Health, Thorns", typeof(VinesOnAttackBehaviour), "Sciman101-OcCardPack/Artwork/Abilities/vinesonattack.png");
-            DestroyTerrain = AbilityManager.New(PluginGuid, "Vandal", "When this card attacks a terrain card, it is destroyed immediately.", typeof(DestroyTerrainBehaviour), "Sciman101-OcCardPack/Artwork/Abilities/destroyterrain.png");
-            PotionSeller = AbilityManager.New(PluginGuid, "Potion Seller", "When this card is played, choose a random tonic to enter your hand.", typeof(PotionSellerBehaviour), "Sciman101-OcCardPack/Artwork/Abilities/potionseller.png");
-            Sticky = AbilityManager.New(PluginGuid, "Sticky", "Cards opposing this creature are unable to move to other spaces on the board.", typeof(StickyBehaviour), "Sciman101-OcCardPack/Artwork/Abilities/sticky.png");
-            TonicEffect = AbilityManager.New(PluginGuid, "Tonic", "When this card is sacrificed, the card it was sacrificed for drinks the contents of the bottle.", typeof(TonicEffectBehaviour), "Sciman101-OcCardPack/Artwork/Abilities/toniceffect.png");
+            VinesOnAttack = AbilityManager.New(PluginGuid, "Vine Grower", "When a card bearing this sigil is played, Thorny Vines are created on each empty adjacent space. Thorny Vines are defined as: 1 Power, 1 Health, Thorns", typeof(VinesOnAttackBehaviour), "Sciman101-OcCardPack/Artwork/Abilities/vinesonattack.png").AddMetaCategories(AbilityMetaCategory.Part1Rulebook);
+            DestroyTerrain = AbilityManager.New(PluginGuid, "Vandal", "When this card attacks a terrain card, it is destroyed immediately.", typeof(DestroyTerrainBehaviour), "Sciman101-OcCardPack/Artwork/Abilities/destroyterrain.png").AddMetaCategories(AbilityMetaCategory.Part1Rulebook);
+            PotionSeller = AbilityManager.New(PluginGuid, "Potion Seller", "When this card is played, choose a random tonic to enter your hand.", typeof(PotionSellerBehaviour), "Sciman101-OcCardPack/Artwork/Abilities/potionseller.png").AddMetaCategories(AbilityMetaCategory.Part1Rulebook);
+            Sticky = AbilityManager.New(PluginGuid, "Sticky", "Cards opposing this creature are unable to move to other spaces on the board.", typeof(StickyBehaviour), "Sciman101-OcCardPack/Artwork/Abilities/sticky.png").AddMetaCategories(AbilityMetaCategory.Part1Rulebook);
+            TonicEffect = AbilityManager.New(PluginGuid, "Tonic", "When this card is sacrificed, the card it was sacrificed for drinks the contents of the bottle.", typeof(TonicEffectBehaviour), "Sciman101-OcCardPack/Artwork/Abilities/toniceffect.png").AddMetaCategories(AbilityMetaCategory.Part1Rulebook);
 
             JnfrFaceRandomizerBehaviour.GetSprites();
             SpecialTriggeredAbility jnfrFaceRandomizer = SpecialTriggeredAbilityManager.Add(PluginGuid, "JnfrFaceChanger", typeof(JnfrFaceRandomizerBehaviour)).Id;
@@ -53,7 +53,6 @@ namespace OcCardPack
             #endregion
 
             #region Add Cards
-            Debug.Log("imp");
             CardInfo card_imp = CardManager.New(
                     PluginPrefix,
                     "Imp_Iekika",
@@ -66,7 +65,6 @@ namespace OcCardPack
                 .SetPortrait("Sciman101-OcCardPack/Artwork/Cards/imp.png")
                 .SetEmissivePortrait("Sciman101-OcCardPack/Artwork/Cards/imp_emission.png");
 
-            Debug.Log("root");
             CardManager.New(PluginPrefix,"Kobol_Root","Kobold",1,2, "A mischevious creature. No wall or monument shall hinder this beast.")
                 .SetDefaultPart1Card()
                 .SetCost(bonesCost: 3)
@@ -75,7 +73,6 @@ namespace OcCardPack
                 .SetEmissivePortrait("Sciman101-OcCardPack/Artwork/Cards/root_emission.png")
                 .AddTribes(Tribe.Reptile);
 
-            Debug.Log("jnfr");
             CardManager.New(PluginPrefix, "Robot_Jnfr", "Robot?", 1, 1, "It bears a strong resemblance to... him, only.... more insufferable.")
                 .SetDefaultPart1Card()
                 .SetCost(bloodCost: 1)
@@ -84,7 +81,6 @@ namespace OcCardPack
                 .SetEmissivePortrait("Sciman101-OcCardPack/Artwork/Cards/jnfr_emission.png")
                 .AddSpecialAbilities(jnfrFaceRandomizer);
 
-            Debug.Log("jamie");
             CardManager.New(PluginPrefix, "Alchemist_Jamie", "Alchemist", 1, 2, "Smelling of sulfur and ashes, it offers its wares to you, excitedly.")
                 .SetDefaultPart1Card()
                 .SetCost(bloodCost: 2)
@@ -92,14 +88,12 @@ namespace OcCardPack
                 .SetPortrait("Sciman101-OcCardPack/Artwork/Cards/jamie.png")
                 .SetEmissivePortrait("Sciman101-OcCardPack/Artwork/Cards/jamie_emission.png")
                 .AddTribes(Tribe.Reptile);
-            Debug.Log("potions");
             AddPotionCard(TonicEffectBehaviour.POT_HEALTH,"Health Tonic","potionhealth");
             AddPotionCard(TonicEffectBehaviour.POT_POWER, "Power Tonic","potionpower");
             AddPotionCard(TonicEffectBehaviour.POT_FLIGHT, "Flight Tonic","potionflight");
             AddPotionCard(TonicEffectBehaviour.POT_GROWTH, "Growth Tonic","potiongrowth");
             AddPotionCard(TonicEffectBehaviour.POT_BLOOD, "Enriched Blood Vial","potionblood");
 
-            Debug.Log("uma");
             CardManager.New(PluginPrefix, "Slime_Uma", "Slime", 1, 8, "The vast slime. It will hold your enemies close.")
                 .SetDefaultPart1Card()
                 .SetCost(bloodCost: 3)
@@ -108,7 +102,6 @@ namespace OcCardPack
                 .SetEmissivePortrait("Sciman101-OcCardPack/Artwork/Cards/uma_emission.png")
                 .AddTribes(Tribe.Reptile);
 
-            Debug.Log("darue");
             CardManager.New(PluginPrefix, "Plant_Darue", "Plantfolk", 0, 3, "A wallflower, but a loyal one.")
                .SetDefaultPart1Card()
                .SetCost(bonesCost: 4)
@@ -118,7 +111,6 @@ namespace OcCardPack
                .SetEmissiveAltPortrait("Sciman101-OcCardPack/Artwork/Cards/darue_emission.png")
                .AddSpecialAbilities(darueAttackTrigger);
 
-            Debug.Log("vines");
             CardManager.New(PluginPrefix, "Thorn_Vines", "Thorned Vines", 1, 1)
                .SetTerrain()
                .AddAbilities(Ability.Sharp)

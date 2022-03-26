@@ -25,8 +25,9 @@ namespace OcCardPack.Abilities
         {
             CardModificationInfo cardMod;
 
-            print(Card.Info.name);
-            switch (OcCardPackPlugin.PluginPrefix+"_"+Card.Info.name)
+            string cardName = Card.Info.name.Substring(7); // Magic numbers yaaaay
+            Debug.Log(cardName);
+            switch (cardName)
             {
                 case POT_HEALTH:
                     cardMod = new CardModificationInfo(0, 2);
@@ -45,7 +46,7 @@ namespace OcCardPack.Abilities
                     break;
 
                 case POT_BLOOD:
-                    cardMod = new CardModificationInfo(Ability.Sacrificial);
+                    cardMod = new CardModificationInfo(Ability.TripleBlood);
                     break;
 
                 default:
